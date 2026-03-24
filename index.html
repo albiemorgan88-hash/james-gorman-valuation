@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What's Your Property Worth? | James Gorman Property</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-overlay">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">What's Your Property Worth?</h1>
+                    <p class="hero-subtitle">Get an instant property valuation from Derry's most trusted estate agent</p>
+                    <div class="trust-signals">
+                        <span class="trust-item">🏆 500+ Properties Valued</span>
+                        <span class="trust-item">⭐ 20+ Years Experience</span>
+                        <span class="trust-item">🏠 Derry's Most Trusted</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Valuation Form -->
+    <main class="main-content">
+        <div class="container">
+            <div class="form-wrapper">
+                <div class="form-header">
+                    <div class="logo">
+                        <h2>James Gorman Property</h2>
+                        <p>Premium Property Services</p>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <p class="step-indicator">Step <span id="currentStep">1</span> of 5</p>
+                </div>
+
+                <form id="valuationForm" class="valuation-form">
+                    <!-- Step 1: Property Type -->
+                    <div class="form-step active" id="step1">
+                        <h3>What type of property is it?</h3>
+                        <div class="option-grid">
+                            <label class="option-card">
+                                <input type="radio" name="propertyType" value="house" required>
+                                <div class="card-content">
+                                    <span class="icon">🏠</span>
+                                    <span class="label">House</span>
+                                </div>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="propertyType" value="apartment" required>
+                                <div class="card-content">
+                                    <span class="icon">🏢</span>
+                                    <span class="label">Apartment</span>
+                                </div>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="propertyType" value="bungalow" required>
+                                <div class="card-content">
+                                    <span class="icon">🏡</span>
+                                    <span class="label">Bungalow</span>
+                                </div>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="propertyType" value="commercial" required>
+                                <div class="card-content">
+                                    <span class="icon">🏢</span>
+                                    <span class="label">Commercial</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Bedrooms -->
+                    <div class="form-step" id="step2">
+                        <h3>How many bedrooms?</h3>
+                        <div class="option-grid bedrooms">
+                            <label class="option-card">
+                                <input type="radio" name="bedrooms" value="1" required>
+                                <div class="card-content">
+                                    <span class="number">1</span>
+                                    <span class="label">Bedroom</span>
+                                </div>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="bedrooms" value="2" required>
+                                <div class="card-content">
+                                    <span class="number">2</span>
+                                    <span class="label">Bedrooms</span>
+                                </div>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="bedrooms" value="3" required>
+                                <div class="card-content">
+                                    <span class="number">3</span>
+                                    <span class="label">Bedrooms</span>
+                                </div>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="bedrooms" value="4" required>
+                                <div class="card-content">
+                                    <span class="number">4</span>
+                                    <span class="label">Bedrooms</span>
+                                </div>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="bedrooms" value="5" required>
+                                <div class="card-content">
+                                    <span class="number">5</span>
+                                    <span class="label">Bedrooms</span>
+                                </div>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="bedrooms" value="6+" required>
+                                <div class="card-content">
+                                    <span class="number">6+</span>
+                                    <span class="label">Bedrooms</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Location -->
+                    <div class="form-step" id="step3">
+                        <h3>Where is your property located?</h3>
+                        <div class="input-wrapper">
+                            <select name="location" required class="location-select">
+                                <option value="">Select your area in Derry</option>
+                                <option value="culmore">Culmore</option>
+                                <option value="eglinton">Eglinton</option>
+                                <option value="waterside">Waterside</option>
+                                <option value="cityside">Cityside</option>
+                                <option value="drumahoe">Drumahoe</option>
+                                <option value="strathfoyle">Strathfoyle</option>
+                                <option value="ballynagard">Ballynagard</option>
+                                <option value="rosemount">Rosemount</option>
+                                <option value="bogside">Bogside</option>
+                                <option value="creggan">Creggan</option>
+                                <option value="shantallow">Shantallow</option>
+                                <option value="newbuildings">Newbuildings</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Condition -->
+                    <div class="form-step" id="step4">
+                        <h3>What's the property condition?</h3>
+                        <div class="option-grid vertical">
+                            <label class="option-card condition">
+                                <input type="radio" name="condition" value="excellent" required>
+                                <div class="card-content">
+                                    <span class="icon">✨</span>
+                                    <div class="text-content">
+                                        <span class="label">Excellent</span>
+                                        <span class="description">Recently renovated, move-in ready</span>
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="option-card condition">
+                                <input type="radio" name="condition" value="good" required>
+                                <div class="card-content">
+                                    <span class="icon">👍</span>
+                                    <div class="text-content">
+                                        <span class="label">Good</span>
+                                        <span class="description">Well maintained, minor updates needed</span>
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="option-card condition">
+                                <input type="radio" name="condition" value="fair" required>
+                                <div class="card-content">
+                                    <span class="icon">🔧</span>
+                                    <div class="text-content">
+                                        <span class="label">Fair</span>
+                                        <span class="description">Some work needed, liveable condition</span>
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="option-card condition">
+                                <input type="radio" name="condition" value="needs-work" required>
+                                <div class="card-content">
+                                    <span class="icon">🏗️</span>
+                                    <div class="text-content">
+                                        <span class="label">Needs Work</span>
+                                        <span class="description">Major renovation required</span>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Step 5: Contact Details -->
+                    <div class="form-step" id="step5">
+                        <h3>Get your valuation report</h3>
+                        <div class="contact-form">
+                            <div class="input-group">
+                                <input type="text" name="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="input-group">
+                                <input type="email" name="email" placeholder="Email Address" required>
+                            </div>
+                            <div class="input-group">
+                                <input type="tel" name="phone" placeholder="Phone Number" required>
+                            </div>
+                            <p class="privacy-note">Your details are safe with us. We'll never share your information.</p>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Buttons -->
+                    <div class="form-navigation">
+                        <button type="button" id="prevBtn" class="btn btn-secondary">Previous</button>
+                        <button type="button" id="nextBtn" class="btn btn-primary">Next</button>
+                        <button type="submit" id="submitBtn" class="btn btn-primary" style="display: none;">Get My Valuation</button>
+                    </div>
+                </form>
+
+                <!-- Loading Screen -->
+                <div id="loadingScreen" class="loading-screen">
+                    <div class="loading-content">
+                        <div class="spinner"></div>
+                        <h3>Calculating your property value...</h3>
+                        <p class="loading-text">Analyzing local market data</p>
+                    </div>
+                </div>
+
+                <!-- Results Screen -->
+                <div id="resultsScreen" class="results-screen">
+                    <div class="results-content">
+                        <div class="valuation-result">
+                            <h2>Your Property Valuation</h2>
+                            <div class="value-range">
+                                <span class="currency">£</span>
+                                <span id="valuationMin">185,000</span>
+                                <span class="separator">-</span>
+                                <span class="currency">£</span>
+                                <span id="valuationMax">210,000</span>
+                            </div>
+                            <p class="result-note">Based on current market conditions and comparable properties</p>
+                        </div>
+                        
+                        <div class="cta-section">
+                            <h3>Want a precise valuation?</h3>
+                            <p>Book a FREE in-person valuation with James Gorman for an exact market value</p>
+                            <a href="tel:02871234567" class="btn btn-gold btn-large">📞 Book FREE Valuation</a>
+                            <div class="contact-info">
+                                <p><strong>James Gorman Property</strong></p>
+                                <p>📧 info@jamesgormanproperty.com</p>
+                                <p>📱 028 7123 4567</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h4>James Gorman Property</h4>
+                    <p>Derry's Premier Estate Agent</p>
+                </div>
+                <div class="footer-stats">
+                    <div class="stat">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Properties Valued</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">20+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">98%</span>
+                        <span class="stat-label">Client Satisfaction</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
