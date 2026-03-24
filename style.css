@@ -107,7 +107,7 @@ body {
 }
 
 .form-wrapper {
-    max-width: 600px;
+    max-width: 550px;
     margin: 0 auto;
     background: var(--white);
     border-radius: 20px;
@@ -119,7 +119,7 @@ body {
 .form-header {
     background: linear-gradient(135deg, var(--primary-navy), var(--secondary-navy));
     color: var(--white);
-    padding: 2rem;
+    padding: 1.75rem 2rem;
     text-align: center;
 }
 
@@ -139,19 +139,39 @@ body {
 
 .progress-bar {
     width: 100%;
-    height: 4px;
+    height: 8px;
     background: rgba(255, 255, 255, 0.2);
-    border-radius: 2px;
+    border-radius: 4px;
     margin: 1.5rem 0 1rem;
     overflow: hidden;
+    position: relative;
+}
+
+.progress-bar::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: repeating-linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.5) 0px,
+        rgba(255, 255, 255, 0.5) 2px,
+        transparent 2px,
+        transparent 20%
+    );
+    transform: translateY(-50%);
+    pointer-events: none;
 }
 
 .progress-fill {
     height: 100%;
     background: linear-gradient(90deg, var(--accent-gold), var(--light-gold));
-    border-radius: 2px;
+    border-radius: 4px;
     width: 20%;
-    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
 }
 
 .step-indicator {
@@ -162,16 +182,21 @@ body {
 
 /* Form Styles */
 .valuation-form {
-    padding: 2.5rem;
+    padding: 2rem 2.5rem;
 }
 
 .form-step {
     display: none;
-    animation: fadeInSlide 0.5s ease-out;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-step.active {
     display: block;
+    opacity: 1;
+    transform: translateX(0);
+    animation: slideInFade 0.5s ease-out forwards;
 }
 
 .form-step h3 {
@@ -538,6 +563,24 @@ body {
 .footer-logo p {
     opacity: 0.8;
     font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-contact .contact-item {
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+.footer-contact .contact-item span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .footer-stats {
@@ -654,5 +697,26 @@ body {
     
     .separator {
         display: none;
+    }
+}
+
+/* Keyframe Animations */
+@keyframes slideInFade {
+    0% {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
     }
 }
